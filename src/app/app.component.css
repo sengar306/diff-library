@@ -1,0 +1,57 @@
+.editor {
+  border: 1px solid #ccc;
+  font-family: monospace;
+}
+
+.header {
+  display: flex;
+  font-weight: bold;
+  padding: 10px 0;
+  background: #f3f3f3;
+  border-bottom: 1px solid #ccc;
+}
+
+.col-title {
+  width: 50%;
+  text-align: center;
+}
+
+/* Two editor columns */
+.editor-body {
+  display: flex;
+  height: 350px;          /* FIX HEIGHT HERE */
+}
+
+.editor-col {
+  width: 50%;
+  overflow-y: auto;        /* SCROLL HERE */
+  border-right: 1px solid #eee;
+  padding: 4px;
+}
+
+.editor-col:last-child {
+  border-right: none;
+}
+
+/* Each line */
+.line {
+  display: flex;
+}
+
+.line-no {
+  width: 50px;
+  text-align: right;
+  padding-right: 10px;
+  color: #888;
+}
+
+.text {
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+/* colors */
+.equal { background: white; }
+.insert { background: #e4ffe4; }
+.delete { background: #ffe5e5; }
+.update { background: #fff6c4; }

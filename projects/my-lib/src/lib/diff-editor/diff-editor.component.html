@@ -1,0 +1,38 @@
+<div class="diff-editor-container">
+  
+  <div class="header" *ngIf="header.isHeader">
+    <div class="h-col" >{{header.leftHeaderName}}</div>
+    <div class="h-col">{{header.rightHeader}}</div>
+  </div>
+
+  <div class="rows">
+    <div class="row" *ngFor="let r of diffRows; let i = index">
+
+      <!-- LEFT -->
+      <div class="col left" [ngClass]="r.left.type">
+        <div class="line-no">{{ r.left.lineNo }}</div>
+
+        <div class="code"
+             contenteditable="true"
+             [ngClass]="r.left.type"
+             (input)="onLeftEdit(i, $event)"
+             [innerHTML]="r.left.text">
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col right" [ngClass]="r.right.type">
+        <div class="line-no">{{ r.right.lineNo }}</div>
+
+        <div class="code"
+             contenteditable="true"
+             [ngClass]="r.right.type"
+             (input)="onRightEdit(i, $event)"
+             [innerHTML]="r.right.text">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,128 @@
+.diff-editor-container {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background: #f8f8f8;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+
+/* Header */
+.diff-editor-container .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f0f0f0;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #666;
+}
+
+/* Row wrapper */
+.rows {
+  display: grid;
+  background: #fcfcfc;
+}
+
+/* Each row -> 2 columns */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+/* By default left and right editors no scroll */
+.code {
+  padding: 2px 8px;
+  min-height: 22px;
+  white-space: pre-wrap;
+  outline: none;
+  background: #ffffff;
+}
+
+/* RIGHT editor scroll only */
+.col.right .code {
+  max-height: 250px;     
+  overflow-y: auto;     
+}
+/* Make entire row NON-scrollable */
+.rows, 
+.row, 
+.col.right {
+  overflow: hidden !important;
+}
+
+/* Only RIGHT editor scrolls */
+.col.right .code {
+  max-height: 250px;
+  overflow-y: auto !important;
+  display: block;
+  padding-right: 10px; /* avoid text cut */
+}
+.diff-editor-container {
+  height: 500px;          /* your fixed height */
+  overflow-y: auto;      /* scroll here */
+}
+
+/* Left / Right column base */
+.col {
+  display: grid;
+  grid-template-columns: 50px auto;
+ 
+  align-items: flex-start;
+  border-right: 1px solid #e5e5e5;
+  min-height: 22px;
+  font-size: 14px;
+}
+
+.col.right {
+  border-right: none;
+}
+
+/* Line numbers */
+.line-no {
+  padding: 2px 10px;
+  text-align: right;
+  color: #8a8a8a;
+  font-size: 13px;
+  user-select: none;
+}
+
+/* Editable code box */
+.code {
+
+  min-height: 22px;
+  white-space: pre-wrap;
+  outline: none;
+  color: #1e1e1e;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+/* Hover (editor feel) */
+.code:hover {
+  background: #f5f5f5;
+}
+
+/* DIFF COLORS */
+.equal {
+  background: #ffffff;
+}
+
+.insert {
+  background: #e6ffed;     /* light green */
+}
+
+.delete {
+  background: #ffecec;     /* light red */
+}
+
+.update {
+  background: #fff8d1;     /* light yellow */
+}
+
+/* Smooth shadow under text */
+.code {
+  text-shadow: 0 0 0.1px #aaa;
+}
